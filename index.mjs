@@ -13,6 +13,9 @@ console.log('Test accounts created...');
 const aliceAddress = accAlice.getAddress();
 console.log(`Your account address is ${aliceAddress}.`);
 
+const suStr = stdlib.standardUnit;
+console.log(`Your current balance is ${stdlib.formatCurrency(await stdlib.balanceOf(accAlice), 2)} ${suStr}.`)
+
 console.log('Launching...');
 const ctcAlice = accAlice.contract(backend);
 const ctcBob = accBob.contract(backend, ctcAlice.getInfo());
